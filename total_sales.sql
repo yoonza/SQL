@@ -1,0 +1,6 @@
+select BK.CATEGORY, SUM(BS.SALES) as TOTAL_SALES
+from Book BK
+join BOOK_SALES BS on BK.BOOK_ID = BS.BOOK_ID
+where BS.SALES_DATE like '2022-01%'
+group by BK.CATEGORY
+order by BK.CATEGORY;
